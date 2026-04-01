@@ -1,4 +1,4 @@
-const API_URL = "https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/bruxelles_parkings_publics/records?limit=20";
+const API_URL = "https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/bruxelles_parkings_publics/records?limit=30";
 
 let parkings = [];
 
@@ -41,5 +41,39 @@ document.getElementById("searchInput").addEventListener("input", (e) => {
 
     maakTabel(gefilterd);
 });
+let sorteerRichtingPerKolom = {};
 
+document.querySelectorAll("th").forEach(kolom => {
+    kolom.addEventListener("click", () => {
+        const sleutel = kolom.dataset.key;
+
+        sorteerRichtingPerKolom[sleutel] = !sorteerRichtingPerKolom[sleutel];
+
+        const gesorteerdeParkings = [...parkings].sort((eersteParking, tweedeParking) => {
+            let waardeEerste = eersteParking[sleutel];
+            let waardeTweede = tweedeParking[sleutel];
+
+            if (!isNaN(waardeEerste) && !isNaN(waardeTweede)) {
+                return sorteerRichtingPerKolom[sleutel]
+                    ? waardeEerste - waardeTweede
+                    : waardeTweede - waardeEerste;
+            }
+
+            waardeEerste = (waardeEerste || "").toString().toLowerCase();
+            waardeTweede = (waardeTweede || "").toString().toLowerCase();
+
+            if (waardeEerste < waardeTweede) {
+                return sorteerRichtingPerKolom[sleutel] ? -1 : 1;
+            }
+
+            if (waardeEerste > waardeTweede) {
+                return sorteerRichtingPerKolom[sleutel] ? 1 : -1;
+            }
+
+            return 0;
+        });
+
+        maakTabel(gesorteerdeParkings);
+    });
+});
 getParkings();
