@@ -1,6 +1,6 @@
 'use strict';
 async function dataophalen() { const response = await 
-    fetch ('/api/explore/v2.1/catalog/datasets/bruxelles_parkings_publics/records?limit=20')
+    fetch ('https://opendata.brussels.be/explore/embed/dataset/bruxelles_parkings_publics/table/?disjunctive.name_nl&disjunctive.commune_gemeente&sort=name_nl')
     const data = await response.json();
     console.log(data); 
 }
