@@ -1,14 +1,316 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-     <div class="zoekfunctie">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Project</title>
+  </head>
+  <body>
+    <div class="zoekfunctie">
       <input type="text" placeholder="Zoek product" />
     </div>
-    	
-</body>
+    <div class="tabel">
+      <table class="parking-tabel">
+        <thead>
+          <tr>
+            <th></th>
+            <th>NAAM</th>
+            <th>Adress</th>
+            <th>Geografische gegevens</th>
+            <th>Operator</th>
+            <th>Telefoon</th>
+            <th>Totale Capaciteit</th>
+            <th>PMR Capaciteit</th>
+            <th>Aantal verdiepingen</th>
+            <th>Max breedte</th>
+            <th>Max hoogte</th>
+            <th>Gemeente - Commune</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Albertine Square</td>
+            <td>Place de la Justice, 16 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>703</td>
+            <td>15</td>
+            <td>4</td>
+            <td>-999</td>
+            <td>2</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Alhambra</td>
+            <td>Boulevard Emile Jacqmain, 14 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>191</td>
+            <td>0</td>
+            <td>4</td>
+            <td>-999</td>
+            <td>2</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Botanique-Saint-Jean</td>
+            <td>Boulevard du Jardin Botanique, 29 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>381</td>
+            <td>8</td>
+            <td>7</td>
+            <td>-999</td>
+            <td>2</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>CCN</td>
+            <td>Rue du Progrès, 80 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>115</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-999</td>
+            <td>2,35</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Centre</td>
+            <td>Rue du Damier, 26 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Q-Park Belgium</td>
+            <td>+32 2 711 17 00</td>
+            <td>780</td>
+            <td>16</td>
+            <td>7</td>
+            <td>2,5</td>
+            <td>1,9</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>City 2</td>
+            <td>Rue Des Cendres, 8 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>380</td>
+            <td>9</td>
+            <td>7</td>
+            <td>-999</td>
+            <td>2,05</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Dansaert</td>
+            <td>Place du nouveau marché aux grains, 2 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Q-Park Belgium</td>
+            <td>+32 2 711 17 00</td>
+            <td>211</td>
+            <td>6</td>
+            <td>14</td>
+            <td>2,5</td>
+            <td>2,1</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>De Brouckère</td>
+            <td>Boulevard Anspach, 2 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>490</td>
+            <td>0</td>
+            <td>3</td>
+            <td>-999</td>
+            <td>2</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Deux Portes</td>
+            <td>Boulevard de Waterloo, 2A - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>929</td>
+            <td>32</td>
+            <td>6</td>
+            <td>-999</td>
+            <td>1,9</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Docks Bruxsel</td>
+            <td>Boulevard Lambermont, 1 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Indigo Belgium</td>
+            <td>+32 2 431 00 02</td>
+            <td>1670</td>
+            <td>-999</td>
+            <td>2</td>
+            <td>-999</td>
+            <td>2,1</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Ecuyer</td>
+            <td>Rue de l'Ecuyer, 11 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 54 54</td>
+            <td>484</td>
+            <td>10</td>
+            <td>9</td>
+            <td>-999</td>
+            <td>2</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Grand Place</td>
+            <td>Rue du Marche aux Herbes, 104 - 1000</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>992</td>
+            <td>20</td>
+            <td>8</td>
+            <td>2,41</td>
+            <td>2</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Industrie</td>
+            <td>Rue de l'Industrie, 26 - 1000 Etterbeek</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>311</td>
+            <td>4</td>
+            <td>5</td>
+            <td>-999</td>
+            <td>1,9</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Lepage</td>
+            <td>Rue Léon Lepage, 23 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Q-Park Belgium</td>
+            <td>+32 2 711 17 00</td>
+            <td>691</td>
+            <td>4</td>
+            <td>14</td>
+            <td>2,5</td>
+            <td>1,9</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Monnaie</td>
+            <td>Rue du Fossé aux Loups, 7 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>589</td>
+            <td>10</td>
+            <td>3</td>
+            <td>-999</td>
+            <td>1,9</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>P+R Heysel</td>
+            <td>Avenue Impératrice Charlotte - 1020 Laeken</td>
+            <td></td>
+            <td>Parking Brussels</td>
+            <td></td>
+            <td>100</td>
+            <td>-999</td>
+            <td>-999</td>
+            <td>-999</td>
+            <td>2,1</td>
+            <td>Laeken - Laken</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Pacheco</td>
+            <td>Boulevard Pacheco, 7 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Q-Park Belgium</td>
+            <td>+32 2 711 17 00</td>
+            <td>344</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2,5</td>
+            <td>2,1</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Passage 44</td>
+            <td>Rue de l'Ommegang, 16 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>525</td>
+            <td>6</td>
+            <td>4</td>
+            <td>-999</td>
+            <td>2</td>
+            <td>Brussel - Bruxelles</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Porte de Hal -Parvis</td>
+            <td>Boulevard de Waterloo, 103 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>510</td>
+            <td>11</td>
+            <td>4</td>
+            <td>-999</td>
+            <td>1,9</td>
+            <td>Brussel Bruxelles</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Rogier</td>
+            <td>Place Charles Rogier, 1 - 1000 Bruxelles</td>
+            <td></td>
+            <td>Interparking</td>
+            <td>+32 2 549 58 11</td>
+            <td>509</td>
+            <td>11</td>
+            <td>5</td>
+            <td>-999</td>
+            <td>1,9</td>
+            <td>Brussel - Bruxelles</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>
