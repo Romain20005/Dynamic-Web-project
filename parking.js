@@ -1,26 +1,45 @@
-'use strict';
 const API_URL = "https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/bruxelles_parkings_publics/records?limit=20";
+
+let parkings = [];
+
 async function getParkings() {
     try {
         const response = await fetch(API_URL);
         const data = await response.json();
 
-        const tableBody = document.querySelector("#parkingTable tbody");
-
-        tableBody.innerHTML = data.results.map(p => `
-            <tr>
-                <td>${p.name_nl}</td>
-                <td>${p.adres_}</td>
-                <td>${p.operator_fr}</td>
-                <td>${p.capacity}</td>
-                <td>${p.maxheight}</td>
-                <td>${p.commune_gemeente}</td>
-            </tr>
-        `).join("");
+        parkings = data.results;
+        maakTabel(parkings);
 
     } catch (error) {
-        console.error("Fout bij ophalen parkings:", error);
+        console.error("Fout bij ophalen data:", error);
     }
 }
+
+
+function maakTabel(data) {
+    const tableBody = document.querySelector("#parkingTable tbody");
+
+    tableBody.innerHTML = data.map(p => `
+        <tr>
+            <td>${p.name_nl}</td>
+            <td>${p.adres_}</td>
+            <td>${p.operator_fr}</td>
+            <td>${p.capacity}</td>
+            <td>${p.maxheight}</td>
+            <td>${p.commune_gemeente}</td>
+        </tr>
+    `).join("");
+}
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+    const zoekTerm = e.target.value.toLowerCase();
+
+    const gefilterd = parkings.filter(p =>
+        p.name_nl.toLowerCase().includes(zoekTerm) ||
+        p.adres_.toLowerCase().includes(zoekTerm)
+    );
+
+    maakTabel(gefilterd);
+});
 
 getParkings();
