@@ -1,7 +1,83 @@
 'use strict';
-async function dataophalen() { const response = await 
-    fetch ('https://opendata.brussels.be/explore/dataset/bruxelles_parkings_publics/api/?')
-    const data = await response.json();
-    console.log(data); 
+const API_URL = "https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/bruxelles_parkings_publics/records?limit=30";
+
+// array om data op te slaan
+let parkings = [];
+
+// data ophalen (async + await)
+async function getParkings() {
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+
+        parkings = data.results;
+        maakTabel(parkings);     
+
+    } catch (error) {
+        console.error("Fout bij ophalen data:", error);
+    }
 }
-dataophalen();
+
+// tabel maken met template literals
+function maakTabel(data) {
+    const tableBody = document.querySelector("#parkingTable tbody");
+
+    tableBody.innerHTML = data.map(p => `
+        <tr>
+            <td>${p.name_nl || "-"}</td>
+            <td>${p.adres_ || "-"}</td>
+            <td>${p.operator_fr || "-"}</td>
+            <td>${p.capacity || "-"}</td>
+            <td>${p.maxheight || "-"}</td>
+            <td>${p.commune_gemeente || "-"}</td>
+        </tr>
+    `).join("");
+}
+
+// zoekfunctie (event listener)
+document.getElementById("searchInput").addEventListener("input", (e) => {
+    const zoekTerm = e.target.value.toLowerCase();
+
+    const gefilterd = parkings.filter(p =>
+        (p.name_nl || "").toLowerCase().includes(zoekTerm) ||
+        (p.adres_ || "").toLowerCase().includes(zoekTerm)
+    );
+
+    maakTabel(gefilterd);
+});
+
+// sorteer systeem
+let sorteerRichtingPerKolom = {};
+
+document.querySelectorAll("th").forEach(kolom => {
+    kolom.addEventListener("click", () => {
+        const sleutel = kolom.dataset.key;
+
+        sorteerRichtingPerKolom[sleutel] = !sorteerRichtingPerKolom[sleutel];
+
+        const gesorteerdeParkings = [...parkings].sort((a, b) => {
+            let waardeA = a[sleutel];
+            let waardeB = b[sleutel];
+
+            // cijfers sorteren
+            if (!isNaN(waardeA) && !isNaN(waardeB)) {
+                return sorteerRichtingPerKolom[sleutel]
+                    ? waardeA - waardeB
+                    : waardeB - waardeA;
+            }
+
+            
+            waardeA = (waardeA || "").toString().toLowerCase();
+            waardeB = (waardeB || "").toString().toLowerCase();
+
+            if (waardeA < waardeB) return sorteerRichtingPerKolom[sleutel] ? -1 : 1;
+            if (waardeA > waardeB) return sorteerRichtingPerKolom[sleutel] ? 1 : -1;
+
+            return 0;
+        });
+
+        maakTabel(gesorteerdeParkings);
+    });
+});
+
+getParkings();
