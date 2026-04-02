@@ -67,7 +67,7 @@ function maakTabel(data) {
 
                 <td>
                     <button onclick="toggleFavoriet('${p.name_nl}')">
-                        ${favorieten.includes(p.name_nl) ? "❤️" : "No"}
+                        ${favorieten.includes(p.name_nl) ? "Add" : "Remove"}
                     </button>
                 </td>
             </tr>
@@ -172,6 +172,11 @@ if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark");
 }
 
+// klik
+document.getElementById("themeBtn").addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
     localStorage.setItem("darkMode",
         document.body.classList.contains("dark")
     );
+});
