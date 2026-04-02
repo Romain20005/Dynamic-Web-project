@@ -180,3 +180,27 @@ document.getElementById("themeBtn").addEventListener("click", () => {
         document.body.classList.contains("dark")
     );
 });
+
+const form = document.getElementById("testForm");
+const naamInput = document.getElementById("naam");
+const welkomTekst = document.getElementById("welkom");
+// bij submit
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const naam = naamInput.value.trim();
+
+// VALIDATIE
+    if (naam.length < 2) {
+        alert("Naam moet minstens 2 letters hebben!");
+        return;
+    }
+
+    // opslaan
+    localStorage.setItem("gebruikerNaam", naam);
+
+    // tonen
+    welkomTekst.textContent = `Welkom ${naam} `;
+
+    // reset input
+    form.reset();
+});
