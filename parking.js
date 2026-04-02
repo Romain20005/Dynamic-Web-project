@@ -157,4 +157,5 @@ observer.observe(document.querySelector("table"));
 document.body.classList.toggle("dark")
 document.getElementById("themeBtn").addEventListener("click", () => {
     document.body.classList.toggle("dark");
+    themeBtn.textContent = "Ligth mode🔆"
 });
