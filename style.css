@@ -65,9 +65,9 @@ body {
 /* ── H1 ── */
 h1 {
     max-width: 1200px;
-    margin-left: 150px;
+    margin-left: 550px;
     padding: 2rem 1.5rem 0;
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: -0.03em;
     color: var(--text);
