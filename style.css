@@ -352,49 +352,30 @@ h1 {
 }
 
 @media (max-width: 480px) {
-   h1 {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-right: 0;
-    margin-top: 20px;
-  }
-  #parkingTable th:nth-child(5),
-  #parkingTable td:nth-child(5) {
-    display: none;
-  }
-
-  #parkingTable th,
-  #parkingTable td {
-    padding: 7px 8px;
-    font-size: 11px;
-  }
-
-  #parkingTable img {
-    width: 50px;
-    height: 36px;
-    min-width: 50px;
-  }
-
-  #searchInput {
-    width: 120px;
-  }
-
-  #toggleFavs {
-    font-size: 12px;
-    padding: 7px 10px;
-  }
-
-  #testForm {
-    width: 90%;
-    margin: 1.5rem auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #naam,
-  #submit {
-    width: 50%;
-  }
+    /* Sur très petit écran, masquer aussi "Hoogte" (5e colonne) */
+    #parkingTable th:nth-child(5),
+    #parkingTable td:nth-child(5) {
+        display: none;
+    }
+ 
+    #parkingTable th,
+    #parkingTable td {
+        padding: 7px 8px;
+        font-size: 11px;
+    }
+ 
+    #parkingTable img {
+        width: 50px;
+        height: 36px;
+        min-width: 50px;
+    }
+ 
+    #searchInput {
+        width: 120px;
+    }
+ 
+    #toggleFavs {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
 }
