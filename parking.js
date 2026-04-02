@@ -128,3 +128,6 @@ const observer = new IntersectionObserver(entries => {
 observer.observe(document.querySelector("table"));
 
 Document.body.classList.toggle("dark")
+document.getElementById("themeBtn").addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
