@@ -172,10 +172,20 @@ const table = document.querySelector("table");
 if (table) {
     observer.observe(table);
 }
-// bij laden
+function updateThemeButton() {
+    const btn = document.getElementById("themeBtn");
+
+    if (document.body.classList.contains("dark")) {
+        btn.textContent = "☀️ Light mode";
+    } else {
+        btn.textContent = "🌙 Dark mode";
+    }
+}
 if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark");
 }
+
+updateThemeButton();
 
 // klik
 document.getElementById("themeBtn").addEventListener("click", () => {
@@ -184,6 +194,8 @@ document.getElementById("themeBtn").addEventListener("click", () => {
     localStorage.setItem("darkMode",
         document.body.classList.contains("dark")
     );
+
+    updateThemeButton(); 
 });
 
 const form = document.getElementById("testForm");
