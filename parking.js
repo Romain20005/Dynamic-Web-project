@@ -172,10 +172,6 @@ const table = document.querySelector("table");
 if (table) {
     observer.observe(table);
 }
-//Dark mode
-document.getElementById("themeBtn").addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
 // bij laden
 if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark");
