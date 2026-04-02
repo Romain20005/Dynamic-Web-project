@@ -1,284 +1,400 @@
 /* ── Fonts & Reset ── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@500&display=swap');
- 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-    --bg:        #f5f4f0;
-    --bg2:       #eceae4;
-    --bg3:       #ffffff;
-    --text:      #1a1a18;
-    --text2:     #5a5a56;
-    --text3:     #9a9a94;
-    --border:    rgba(0,0,0,0.10);
-    --border2:   rgba(0,0,0,0.18);
-    --accent:    #1a56c4;
-    --accent-bg: #e8effe;
-    --radius:    10px;
-    --radius-lg: 14px;
-    --shadow:    0 1px 4px rgba(0,0,0,0.07);
+  --bg: #f5f4f0;
+  --bg2: #eceae4;
+  --bg3: #ffffff;
+  --text: #1a1a18;
+  --text2: #5a5a56;
+  --text3: #9a9a94;
+  --border: rgba(0, 0, 0, 0.1);
+  --border2: rgba(0, 0, 0, 0.18);
+  --accent: #1a56c4;
+  --accent-bg: #e8effe;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
 }
- 
+
 body.dark {
-    --bg:        #111110;
-    --bg2:       #1c1c1a;
-    --bg3:       #242422;
-    --text:      #f0efe8;
-    --text2:     #9a9a90;
-    --text3:     #5a5a54;
-    --border:    rgba(255,255,255,0.08);
-    --border2:   rgba(255,255,255,0.14);
-    --accent:    #5b8ef0;
-    --accent-bg: #1a2540;
+  --bg: #111110;
+  --bg2: #1c1c1a;
+  --bg3: #242422;
+  --text: #f0efe8;
+  --text2: #9a9a90;
+  --text3: #5a5a54;
+  --border: rgba(255, 255, 255, 0.08);
+  --border2: rgba(255, 255, 255, 0.14);
+  --accent: #5b8ef0;
+  --accent-bg: #1a2540;
 }
- 
+
 /* ── Base ── */
 body {
-    font-family: 'DM Sans', Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 0 0 3rem;
-    transition: background 0.3s, color 0.3s;
+  font-family: "DM Sans", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 0 0 3rem;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
- 
+
 /* ── Dark mode button ── */
 #themeBtn {
-    position: fixed;
-    top: 14px;
-    right: 18px;
-    z-index: 200;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 7px 14px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border2);
-    background: var(--bg3);
-    color: var(--text);
-    cursor: pointer;
-    transition: background 0.2s;
-    box-shadow: var(--shadow);
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 200;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: var(--shadow);
 }
-#themeBtn:hover { background: var(--bg2); }
- 
+#themeBtn:hover {
+  background: var(--bg2);
+}
+
 /* ── H1 ── */
 h1 {
-    max-width: 1200px;
-    margin-left: 550px;
-    padding: 2rem 1.5rem 0;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    color: var(--text);
+  max-width: 1200px;
+  margin-left: 550px;
+  padding: 2rem 1.5rem 0;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text);
 }
- 
+
 /* ── Search input ── */
 #searchInput {
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    background: var(--bg3);
-    color: var(--text);
-    border: 1px solid var(--border2);
-    border-radius: var(--radius);
-    padding: 8px 14px;
-    width: 220px;
-    outline: none;
-    transition: border-color 0.2s;
-    margin: 1.25rem 0 0 max(1.5rem, calc((100% - 1200px) / 2));
-    vertical-align: middle;
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  background: var(--bg3);
+  color: var(--text);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  width: 220px;
+  outline: none;
+  transition: border-color 0.2s;
+  margin: 1.25rem 0 0 max(1.5rem, calc((100% - 1200px) / 2));
+  vertical-align: middle;
 }
-#searchInput:focus { border-color: var(--accent); }
-#searchInput::placeholder { color: var(--text3); }
- 
+#searchInput:focus {
+  border-color: var(--accent);
+}
+#searchInput::placeholder {
+  color: var(--text3);
+}
+
 /* ── Favorieten button ── */
 #toggleFavs {
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 99px;
-    border: 1px solid var(--border2);
-    background: var(--bg3);
-    color: var(--text2);
-    cursor: pointer;
-    transition: all 0.15s;
-    margin-left: 8px;
-    vertical-align: bottom;
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 99px;
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-left: 8px;
+  vertical-align: bottom;
 }
 #toggleFavs:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
 }
- 
+
 /* ── Table wrapper ── */
 #parkingTable {
-    max-width: 1200px;
-    width: calc(100% - 3rem);
-    margin: 1.5rem auto 0;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    font-size: 13.5px;
+  max-width: 1200px;
+  width: calc(100% - 3rem);
+  margin: 1.5rem auto 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: 13.5px;
 }
- 
+
 /* ── Table head ── */
-#parkingTable thead tr { background: var(--bg2); }
- 
+#parkingTable thead tr {
+  background: var(--bg2);
+}
+
 #parkingTable th {
-    padding: 11px 14px;
-    text-align: left;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text3);
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    user-select: none;
-    white-space: nowrap;
-    transition: color 0.15s;
-    background: var(--bg2);
+  padding: 11px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text3);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.15s;
+  background: var(--bg2);
 }
-#parkingTable th:hover { color: var(--text); }
- 
+#parkingTable th:hover {
+  color: var(--text);
+}
+
 /* ── Table body ── */
-#parkingTable tbody tr { transition: background 0.15s; }
-#parkingTable tbody tr:hover { background: var(--bg2); }
- 
-#parkingTable td {
-    padding: 12px 14px;
-    color: var(--text);
-    vertical-align: middle;
-    border-bottom: 1px solid var(--border);
+#parkingTable tbody tr {
+  transition: background 0.15s;
 }
-#parkingTable tbody tr:last-child td { border-bottom: none; }
- 
+#parkingTable tbody tr:hover {
+  background: var(--bg2);
+}
+
+#parkingTable td {
+  padding: 12px 14px;
+  color: var(--text);
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+#parkingTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
 /* Name column */
-#parkingTable td:nth-child(1) { font-weight: 500; }
- 
+#parkingTable td:nth-child(1) {
+  font-weight: 500;
+}
+
 /* Capacity column — monospace accent */
 #parkingTable td:nth-child(4) {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    color: var(--accent);
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  color: var(--accent);
 }
- 
+
 /* Height column */
 #parkingTable td:nth-child(5) {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    color: var(--text2);
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  color: var(--text2);
 }
- 
+
 /* ── Images ── */
 #parkingTable img {
-    width: 80px;
-    height: 54px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    display: block;
+  width: 80px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
 }
- 
+
 /* ── Favorite button ── */
 #parkingTable button {
-    font-size: 16px;
-    background: none;
-    border: 1px solid var(--border2);
-    border-radius: 8px;
-    width: 34px;
-    height: 34px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s;
-    color: var(--text3);
-    padding: 0;
+  font-size: 16px;
+  background: none;
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  color: var(--text3);
+  padding: 0;
 }
 #parkingTable button:hover {
-    border-color: #e05;
-    background: rgba(200,0,50,0.06);
+  border-color: #e05;
+  background: rgba(200, 0, 50, 0.06);
 }
- 
+
+#testForm {
+  width: 15%;
+  margin-left: 550px;
+}
+
+#naam {
+  width: 50%;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 30%;
+  border: solid 1px;
+  border-radius: 45%;
+}
+
+#submit {
+  display: block;
+  width: 100%;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    opacity 0.15s,
+    transform 0.1s;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
-    #searchInput { width: 160px; }
-    #parkingTable { font-size: 12px; }
-    #parkingTable th, #parkingTable td { padding: 9px 10px; }
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  #searchInput {
+    width: 160px;
+  }
+  #parkingTable {
+    font-size: 12px;
+  }
+  #parkingTable th,
+  #parkingTable td {
+    padding: 9px 10px;
+  }
+   #testForm {
+    width: 80%;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #naam {
+    
+  }
+  #submit {
+    width: 50%;
+  }
 }
- @media (max-width: 768px) {
-    /* Réduire padding pour gagner de la place */
-    #parkingTable th,
-    #parkingTable td {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
- 
-    /* Masquer les colonnes moins importantes */
-    /* Masquer "Gemeente" (6e colonne) */
-    #parkingTable th:nth-child(6),
-    #parkingTable td:nth-child(6) {
-        display: none;
-    }
- 
-    /* Masquer "Operator" (3e colonne) */
-    #parkingTable th:nth-child(3),
-    #parkingTable td:nth-child(3) {
-        display: none;
-    }
- 
-    /* Images plus petites */
-    #parkingTable img {
-        width: 60px;
-        height: 42px;
-        min-width: 60px;
-    }
- 
-    /* Search + toggleFavs sur une ligne */
-    #searchInput {
-        width: 150px;
-        margin-left: 1rem;
-    }
- 
-    h1 {
-        padding-right: 100px; /* évite chevauchement avec le bouton fixe */
-    }
+@media (max-width: 768px) {
+  #parkingTable th,
+  #parkingTable td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  #parkingTable th:nth-child(6),
+  #parkingTable td:nth-child(6) {
+    display: none;
+  }
+
+  #parkingTable th:nth-child(3),
+  #parkingTable td:nth-child(3) {
+    display: none;
+  }
+
+  #parkingTable img {
+    width: 60px;
+    height: 42px;
+    min-width: 60px;
+  }
+
+  #searchInput {
+    width: 150px;
+    margin-left: 1rem;
+  }
+
+  h1 {
+    padding-right: 100px;
+  }
+
+  #testForm {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #naam {
+    width: 45%;
+    padding-left: 70px;
+    border-radius: 65%;
+  }
+  #submit {
+    width: 50%;
+  }
 }
- 
+
 @media (max-width: 480px) {
-    /* Sur très petit écran, masquer aussi "Hoogte" (5e colonne) */
-    #parkingTable th:nth-child(5),
-    #parkingTable td:nth-child(5) {
-        display: none;
-    }
- 
-    #parkingTable th,
-    #parkingTable td {
-        padding: 7px 8px;
-        font-size: 11px;
-    }
- 
-    #parkingTable img {
-        width: 50px;
-        height: 36px;
-        min-width: 50px;
-    }
- 
-    #searchInput {
-        width: 120px;
-    }
- 
-    #toggleFavs {
-        font-size: 12px;
-        padding: 7px 10px;
-    }
+   h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-right: 0;
+    margin-top: 20px;
+  }
+  #parkingTable th:nth-child(5),
+  #parkingTable td:nth-child(5) {
+    display: none;
+  }
+
+  #parkingTable th,
+  #parkingTable td {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+
+  #parkingTable img {
+    width: 50px;
+    height: 36px;
+    min-width: 50px;
+  }
+
+  #searchInput {
+    width: 120px;
+  }
+
+  #toggleFavs {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  #testForm {
+    width: 90%;
+    margin: 1.5rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #naam,
+  #submit {
+    width: 50%;
+  }
 }
