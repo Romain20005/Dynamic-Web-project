@@ -203,4 +203,9 @@ form.addEventListener("submit", (e) => {
 
     // reset input
     form.reset();
+    const opgeslagenNaam = localStorage.getItem("gebruikerNaam");
+
+if (opgeslagenNaam) {
+    welkomTekst.textContent = `Welkom ${opgeslagenNaam} 👋`;
+}
 });
