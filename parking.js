@@ -67,7 +67,7 @@ function maakTabel(data) {
 
                 <td>
                     <button onclick="toggleFavoriet('${p.name_nl}')">
-                        ${favorieten.includes(p.name_nl) ? "Add" : "Remove"}
+                        ${favorieten.includes(p.name_nl) ? "❤️" : "❌"}
                     </button>
                 </td>
             </tr>
