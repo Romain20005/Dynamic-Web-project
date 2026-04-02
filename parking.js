@@ -108,5 +108,23 @@ function toggleFavoriet(naam) {
     }
 
     localStorage.setItem("favorieten", JSON.stringify(favorieten));
-    maakTabel(parkings);
+    if (toonAlleenFavorieten) {
+        const gefilterd = parkings.filter(p =>
+            favorieten.includes(p.name_nl)
+        );
+        maakTabel(gefilterd);
+    } else {
+        maakTabel(parkings);
+    }
 }
+// Observer API
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            console.log("Element zichtbaar")
+        }
+    });
+});
+observer.observe(document.querySelector("table"));
+
+Document.body.classList.toggle("dark")
