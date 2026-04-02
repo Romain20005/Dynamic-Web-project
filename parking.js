@@ -1,6 +1,28 @@
 'use strict';
 const API_URL = "https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/bruxelles_parkings_publics/records?limit=30";
 
+const parkingImages = {
+    "Alhambra": "Images/Alhambra parking.jpg",
+    "Centre": "Images/Centre_Centrum Parking.jpg",
+    "De Brouckère": "Images/De brouckère parking.jpg",
+    "Docks Bruxsel": "Images/Docks Brussel parking.jpg",
+    "Grote Markt": "Images/Grote markt parking.jpg",
+    "Guldenvlies": "Images/Guldenvlies parking.jpg",
+    "Hallepoort": "Images/Hallepoort parking.jpg",
+    "Industrie": "Images/Industrie parking.jpg",
+    "Lepage": "Images/Lepage parking.jpg",
+    "Monnaie": "Images/Monnaie_munt parking.jpg",
+    "P+R Heysel": "Images/P+R Heysel.jpg",
+    "Dansaert": "Images/Parking danseart.jpg",
+    "Passage 44": "Images/Passage 44 parking.jpg",
+    "Poelaert": "Images/Poelaert parking.jpg",
+    "Rogier": "Images/Rogier.jpg",
+    "Roupe": "Images/Roupe fontainas parking.jpg",
+    "Spectrum": "Images/Spectrum Parking.jpg",
+    "Up Site": "Images/Up site parking.jpg",
+    "Vleurgat": "Images/Vleurgat Parking.jpg",
+    "Warwick": "Images/Warwick parking.jpg"
+};
 // array om data op te slaan
 let parkings = [];
 let favorieten = JSON.parse(localStorage.getItem("favorieten")) || [];
@@ -32,6 +54,11 @@ function maakTabel(data) {
             <td>${p.capacity || "-"}</td>
             <td>${p.maxheight || "-"}</td>
             <td>${p.commune_gemeente || "-"}</td>
+
+            <td>
+    <img src="${parkingImages[p.name_nl] || ''}" width="100">
+            </td>
+
             <td>
                 <button onclick="toggleFavoriet('${p.name_nl}')">
                     ${favorieten.includes(p.name_nl) ? "❤️" : "No"}
@@ -126,7 +153,7 @@ const observer = new IntersectionObserver(entries => {
     });
 });
 observer.observe(document.querySelector("table"));
-
+//Dark mode
 Document.body.classList.toggle("dark")
 document.getElementById("themeBtn").addEventListener("click", () => {
     document.body.classList.toggle("dark");
