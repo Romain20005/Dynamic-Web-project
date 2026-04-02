@@ -46,26 +46,33 @@ async function getParkings() {
 function maakTabel(data) {
     const tableBody = document.querySelector("#parkingTable tbody");
 
-    tableBody.innerHTML = data.map(p => `
-        <tr>
-            <td>${p.name_nl || "-"}</td>
-            <td>${p.adres_ || "-"}</td>
-            <td>${p.operator_fr || "-"}</td>
-            <td>${p.capacity || "-"}</td>
-            <td>${p.maxheight || "-"}</td>
-            <td>${p.commune_gemeente || "-"}</td>
+    tableBody.innerHTML = data.map(p => {
 
-            <td>
-    <img src="${parkingImages[p.name_nl] || ''}" width="100">
-            </td>
+        const imageKey = Object.keys(parkingImages).find(key =>
+            (p.name_nl || "").toLowerCase().includes(key.toLowerCase())
+        );
 
-            <td>
-                <button onclick="toggleFavoriet('${p.name_nl}')">
-                    ${favorieten.includes(p.name_nl) ? "❤️" : "No"}
-                </button>
-            </td>
-        </tr>
-    `).join("");
+        return `
+            <tr>
+                <td>${p.name_nl || "-"}</td>
+                <td>${p.adres_ || "-"}</td>
+                <td>${p.operator_fr || "-"}</td>
+                <td>${p.capacity || "-"}</td>
+                <td>${p.maxheight || "-"}</td>
+                <td>${p.commune_gemeente || "-"}</td>
+
+                <td>
+                    <img src="${parkingImages[imageKey] || ''}" width="100">
+                </td>
+
+                <td>
+                    <button onclick="toggleFavoriet('${p.name_nl}')">
+                        ${favorieten.includes(p.name_nl) ? "Add" : "Remove"}
+                    </button>
+                </td>
+            </tr>
+        `;
+    }).join("");
 }
 
 // zoekfunctie (event listener)
@@ -152,9 +159,11 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 });
-observer.observe(document.querySelector("table"));
+const table = document.querySelector("table");
+if (table) {
+    observer.observe(table);
+}
 //Dark mode
-document.body.classList.toggle("dark")
 document.getElementById("themeBtn").addEventListener("click", () => {
     document.body.classList.toggle("dark");
     themeBtn.textContent = "Ligth mode🔆"
