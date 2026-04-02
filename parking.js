@@ -3,6 +3,7 @@ const API_URL = "https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/
 
 // array om data op te slaan
 let parkings = [];
+let favorieten = JSON.parse(localStorage.getItem("favorieten")) || [];
 
 // data ophalen (async + await)
 async function getParkings() {
@@ -30,6 +31,11 @@ function maakTabel(data) {
             <td>${p.capacity || "-"}</td>
             <td>${p.maxheight || "-"}</td>
             <td>${p.commune_gemeente || "-"}</td>
+            <td>
+                <button onclick="toggleFavoriet('${p.name_nl}')">
+                    ${favorieten.includes(p.name_nl) ? "Y" : "N"}
+                </button>
+            </td>
         </tr>
     `).join("");
 }
@@ -60,7 +66,7 @@ document.querySelectorAll("th").forEach(kolom => {
             let waardeB = b[sleutel];
 
             // cijfers sorteren
-            if (!isNaN(waardeA) && !isNaN(waardeB)) {
+            if (!isNaN(Number(waardeA)) && !isNaN(Number(waardeB))) {
                 return sorteerRichtingPerKolom[sleutel]
                     ? waardeA - waardeB
                     : waardeB - waardeA;
@@ -81,3 +87,13 @@ document.querySelectorAll("th").forEach(kolom => {
 });
 
 getParkings();
+function toggleFavoriet(naam) {
+    if (favorieten.includes(naam)) {
+        favorieten = favorieten.filter(f => f !== naam);
+    } else {
+        favorieten.push(naam);
+    }
+
+    localStorage.setItem("favorieten", JSON.stringify(favorieten));
+    maakTabel(parkings);
+}
