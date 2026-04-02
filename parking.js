@@ -130,5 +130,5 @@ observer.observe(document.querySelector("table"));
 document.body.classList.toggle("dark")
 const themeBtn = document.getElementById("themeBtn")
 themeBtn.addEventListener("click", () => {
-    document.body.style.backgroundColor("dark");
+    document.body.style.backgroundColor= "black";
 });
