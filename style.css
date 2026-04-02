@@ -294,10 +294,12 @@ h1 {
   }
 
   #naam {
-    
+    width: 30%;
+    padding-left: 60px;
+    margin-bottom: 10px;
   }
   #submit {
-    width: 50%;
+    width: 40%;
   }
 }
 @media (max-width: 768px) {
@@ -342,9 +344,9 @@ h1 {
   }
 
   #naam {
-    width: 45%;
+    width: 40%;
     padding-left: 70px;
-    border-radius: 65%;
+    border-radius: 70%;
   }
   #submit {
     width: 50%;
@@ -352,7 +354,6 @@ h1 {
 }
 
 @media (max-width: 480px) {
-    /* Sur très petit écran, masquer aussi "Hoogte" (5e colonne) */
     #parkingTable th:nth-child(5),
     #parkingTable td:nth-child(5) {
         display: none;
@@ -378,4 +379,9 @@ h1 {
         font-size: 12px;
         padding: 7px 10px;
     }
+    #naam {
+    width: 55%;
+    padding-right: 50px;
+    border-radius: 70%;
+  }
 }
