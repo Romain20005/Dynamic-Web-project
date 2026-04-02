@@ -11,17 +11,26 @@ const parkingImages = {
     "Hallepoort": "Images/Hallepoort parking.jpg",
     "Industrie": "Images/Industrie parking.jpg",
     "Lepage": "Images/Lepage parking.jpg",
-    "Monnaie": "Images/Monnaie_munt parking.jpg",
+    "Munt": "Images/Monnaie_munt parking.jpg",
     "P+R HEYSEL": "Images/P+R Heysel.jpg",
     "Dansaert": "Images/Parking danseart.jpg",
     "Passage 44": "Images/Passage 44 parking.jpg",
     "Poelaert": "Images/Poelaert parking.jpg",
     "Rogier": "Images/Rogier.jpg",
-    "Roupe": "Images/Roupe fontainas parking.jpg",
+    "Rouppe - Fontainas": "Images/Roupe fontainas parking.jpg",
     "Spectrum": "Images/Spectrum Parking.jpg",
-    "Up Site": "Images/Up site parking.jpg",
+    "Up-Site": "Images/Up site parking.jpg",
     "Vleurgat": "Images/Vleurgat Parking.jpg",
     "Warwick": "Images/Warwick parking.jpg",
+    "CCN": "Images/CCN parking.jpg",
+    "Albertine Square": "Images/Albertine square.jpg",
+    "Pacheco": "Images/Pacheco.jpg",
+    "Kruidtuin-Sint-Jan": "Images/Kruidtuin.jpg",
+    "Deux Portes":"Images/2portes.jpg",
+    "Royal": "Images/royal.jpg",
+    "City 2": "Images/city2.jpg",
+    "Schildknaap": "Images/schildknaap.jpg"
+
 };
 // array om data op te slaan
 let parkings = [];
