@@ -12,7 +12,7 @@ const parkingImages = {
     "Industrie": "Images/Industrie parking.jpg",
     "Lepage": "Images/Lepage parking.jpg",
     "Monnaie": "Images/Monnaie_munt parking.jpg",
-    "P+R Heysel": "Images/P+R Heysel.jpg",
+    "P+R HEYSEL": "Images/P+R Heysel.jpg",
     "Dansaert": "Images/Parking danseart.jpg",
     "Passage 44": "Images/Passage 44 parking.jpg",
     "Poelaert": "Images/Poelaert parking.jpg",
@@ -21,7 +21,7 @@ const parkingImages = {
     "Spectrum": "Images/Spectrum Parking.jpg",
     "Up Site": "Images/Up site parking.jpg",
     "Vleurgat": "Images/Vleurgat Parking.jpg",
-    "Warwick": "Images/Warwick parking.jpg"
+    "Warwick": "Images/Warwick parking.jpg",
 };
 // array om data op te slaan
 let parkings = [];
