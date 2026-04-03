@@ -75,12 +75,11 @@ body {
 /* ── H1 ── */
 h1 {
   max-width: 1200px;
-  margin-left: 550px;
+  margin: 0 auto; 
   padding: 2rem 1.5rem 0;
   font-size: 30px;
   font-weight: 600;
-  letter-spacing: -0.03em;
-  color: var(--text);
+  text-align: center; 
 }
 
 /* ── Search input ── */
@@ -278,9 +277,11 @@ h1 {
   }
 
  #introText {
-    width: 45%;
-    margin-left: 240px;
- }
+  max-width: 800px;
+  margin: 1rem auto; /* center blok */
+  text-align: center;
+  color: var(--text2);
+}
 
   #searchInput {
     width: 160px;
